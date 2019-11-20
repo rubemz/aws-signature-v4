@@ -193,7 +193,7 @@ exports.createPresignedURL = function(
   // when a session token must be "signed" into the canonical request
   // (needed for some services, such as s3)
   if (options.sessionToken && options.signSessionToken) {
-    query["X-Amz-Security-Token"] = options.sessionToken;
+    //query["X-Amz-Security-Token"] = options.sessionToken;
   }
 
   var canonicalRequest = exports.createCanonicalRequest(
@@ -222,9 +222,9 @@ exports.createPresignedURL = function(
   // when a session token must NOT be "signed" into the canonical request
   // (needed for some services, such as IoT)
   if (options.sessionToken && !options.signSessionToken) {
-    query["X-Amz-Security-Token"] = options.sessionToken;
+    //query["X-Amz-Security-Token"] = options.sessionToken;
   } else {
-    delete query["X-Amz-Security-Token"];
+    //delete query["X-Amz-Security-Token"];
   }
 
   return (
